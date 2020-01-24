@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import ItemList from '../item-list/item-list';
-import PersonDetails from '../person-details/person-details';
+import ItemDetails from '../item-details/item-details';
 import SwapiService from './../../services/swapi-service';
 import Row from './../row/index';
 import ErrorBoundry from './../error-boundry/error-boundry';
@@ -30,13 +30,13 @@ export default class PeoplePage extends Component {
       </ItemList>
     );
 
-    const personDetails = (
-      <PersonDetails personId={this.state.selectedPerson} />
+    const itemDetails = (
+      <itemDetails personId={this.state.selectedPerson} />
     );
 
     return (
       <ErrorBoundry>
-        <Row left={itemList} right={personDetails} />
+        <Row left={itemList} right={ItemDetails} />
       </ErrorBoundry>
     );
   }
